@@ -118,6 +118,18 @@ export const tasksInfo = createSlice({
       }
       return newState
     },
+    toggleFreshTaskSub: (state, action) => {
+      const newBool = !state.freshTasks[action.payload.index].subTasks[action.payload.i].completed
+      state.freshTasks[action.payload.index].subTasks[action.payload.i].completed = newBool
+    },
+    toggleInProgressTaskSub: (state, action) => {
+      const newBool = !state.inProgressTasks[action.payload.index].subTasks[action.payload.i].completed
+      state.inProgressTasks[action.payload.index].subTasks[action.payload.i].completed = newBool;
+    },
+    toggleCompletedTaskSub: (state, action) => {
+      const newBool = !state.completedTasks[action.payload.index].subTasks[action.payload.i].completed
+      state.completedTasks[action.payload.index].subTasks[action.payload.i].completed = newBool
+    }
   },
 });
 
@@ -138,7 +150,10 @@ export const {
   addCompletedSubTask,
   addFreshSubTask,
   updateNewSubTask,
-  clearNewStates
+  clearNewStates,
+  toggleCompletedTaskSub,
+  toggleFreshTaskSub,
+  toggleInProgressTaskSub,
 } = tasksInfo.actions;
 
 export default tasksInfo.reducer;
