@@ -44,7 +44,7 @@ export function UserPage() {
         </button>
       </div>
       <div className="side-bar-menu bg-blue-800 text-stone-200 w-64 p-4 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out">
-        <h1 className="text-2xl py-2 px-4 text-white">sockdrawer</h1>
+        <h1 className="text-3xl py-2 px-4 text-white">sockdrawer</h1>
         <nav>
           <button
             className="block py-2 px-4 transition duration-100 hover:bg-blue-500 hover:text-white rounded"

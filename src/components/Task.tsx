@@ -9,7 +9,7 @@ export function Task(props: taskProps) {
   return (
     <Draggable draggableId={props.draggableId} index={props.index}>
       {(provided) => (
-        <div className="border p-2 rounded justify-center" {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
+        <div className="border p-2 rounded justify-center bg-white shadow-sm" {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
           <h1>{props.title}</h1>
         </div>
       )}

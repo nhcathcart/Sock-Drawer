@@ -99,10 +99,10 @@ export function Dashboard() {
 
   return (
     <Fragment>
-      <div className="flex w-full h-full flex-col p-2 md:flex-row">
+      <div className="flex w-full h-full flex-col p-2 md:flex-row space-x-3">
         <DragDropContext onDragEnd={onDragEnd}>
-          <div className="flex flex-col h-full rounded-xl border-solid items-center w-full md:w-1/3">
-            <div className="bg-blue-400 text-stone-50 flex justify-center text-4xl w-10/12 rounded m-3 p-2">
+          <div className="flex flex-col shadow-inner bg-gray-50 h-full rounded-xl border-solid items-center w-full md:w-1/3">
+            <div className="bg-blue-400 text-stone-50 flex justify-center text-2xl w-10/12 rounded m-3 p-2 shadow-md">
               <h4>fresh</h4>
             </div>
             <Droppable droppableId="freshDrop">
@@ -128,8 +128,8 @@ export function Dashboard() {
               add task
             </button>
           </div>
-          <div className="flex flex-col h-full rounded-xl border-solid items-center w-full md:w-1/3">
-            <div className="bg-orange-400 text-stone-50 flex justify-center text-4xl w-10/12 rounded m-3 p-2">
+          <div className="flex flex-col h-full shadow-inner bg-gray-50 rounded-xl border-solid items-center w-full md:w-1/3">
+            <div className="bg-orange-500 text-stone-50 flex justify-center text-2xl w-10/12 rounded m-3 p-2 shadow-md">
               <h4>folding</h4>
             </div>
             <Droppable droppableId="inProgressDrop">
@@ -147,8 +147,8 @@ export function Dashboard() {
               )}
             </Droppable>
           </div>
-          <div className="flex flex-col h-full rounded-xl border-solid items-center w-full md:w-1/3">
-            <div className="bg-blue-800 text-stone-50 flex justify-center text-4xl w-10/12 rounded m-3 p-2">
+          <div className="flex flex-col h-full shadow-inner bg-gray-50 rounded-xl border-solid items-center w-full md:w-1/3">
+            <div className="bg-blue-800 text-stone-50 flex justify-center text-2xl w-10/12 rounded m-3 p-2 shadow-md">
               <h4>put away</h4>
             </div>
             <Droppable droppableId="completedDrop">

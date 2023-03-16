@@ -117,7 +117,7 @@ export const tasksInfo = createSlice({
         subTasks: [],
       }
       return newState
-    }
+    },
   },
 });
 

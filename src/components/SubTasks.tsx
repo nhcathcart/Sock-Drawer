@@ -10,7 +10,9 @@ export function SubTasks (props: props) {
     for (let i=0; i<props.subTasks.length; i++){
         subTasks.push(
             <div className="flex w-full space-x-20">
-                <p>{props.subTasks[i].text}</p><input type="checkbox"/>
+                <p>{props.subTasks[i].text}</p><input type="checkbox" checked={props.subTasks[i].completed? true: false} onClick={(e)=>{
+                    
+                }}/>
             </div>
         )
     }

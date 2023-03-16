@@ -10,7 +10,7 @@ export function Fresh() {
     tasks.push(<LargeTask title={state[i].title} notes={state[i].notes} subTasks={state[i].subTasks} index={i} source={source}/>)
   }
   return (
-    <div className="flex p-6 w-full justify-start flex-col">
+    <div className="flex p-6 w-full justify-start flex-col space-y-2">
       {tasks}
     </div>
   )
