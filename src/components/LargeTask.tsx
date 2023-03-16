@@ -30,25 +30,27 @@ export function LargeTask(props: props) {
 
   return (
     <div className="rounded-lg border w-full p-4">
-      <div className="flex  w-full justify-between">
-        <h1 className="text-4xl">{props.title}</h1>
-        <button
-          onClick={() => setShowNoteModal(true)}
-          className="bg-blue-800 rounded p-2 text-stone-50"
-        >
-          Add Note
-        </button>
-        <button
-          onClick={() => setShowSubTaskModal(true)}
-          className="bg-blue-800 rounded p-2 text-stone-50"
-        >
-          Add SubTask
-        </button>
+      <div className="flex  w-full justify-between items-center">
+        <h1 className="text-4xl mb-2">{props.title}</h1>
+        <div className="flex space-x-3">
+          <button
+            onClick={() => setShowNoteModal(true)}
+            className="bg-blue-800 rounded p-2 text-stone-50"
+          >
+            Add Note
+          </button>
+          <button
+            onClick={() => setShowSubTaskModal(true)}
+            className="bg-blue-800 rounded p-2 text-stone-50"
+          >
+            Add SubTask
+          </button>
+        </div>
       </div>
       <div className="flex flex-col w-full">
-        <h1>Subtasks: </h1>
+        <h1 className="text-lg">Subtasks: </h1>
         <SubTasks subTasks={props.subTasks} />
-        <h1>Notes:</h1>
+        <h1 className="text-lg">Notes:</h1>
         <Notes notes={props.notes} />
       </div>
       <div className="flex w-full justify-self-end"></div>
@@ -56,13 +58,13 @@ export function LargeTask(props: props) {
         <div className="flex flex-col space-y-2">
           <input
             type="text"
-            className="border rounded w-[80%] p-2"
+            className="border rounded w-100 p-3"
             onChange={(e) => {
               dispatch(updateNewNote(e.target.value));
             }}
           />
           <button
-            className="bg-blue-800 text-stone-200 p-2 rounded hover:bg-blue-600 justify-self-end"
+            className="bg-blue-800 text-stone-200 p-3 rounded hover:bg-blue-600 justify-self-end"
             onClick={() => {
               //   dispatch(
               //     addNoteToInProgressTask({
@@ -106,13 +108,13 @@ export function LargeTask(props: props) {
         <div className="flex flex-col space-y-2">
           <input
             type="text"
-            className="border rounded w-[80%] p-2"
+            className="border rounded w-full p-3"
             onChange={(e) => {
               dispatch(updateNewSubTask(e.target.value));
             }}
           />
           <button
-            className="bg-blue-800 text-stone-200 p-2 rounded hover:bg-blue-600 justify-self-end"
+            className="bg-blue-800 text-stone-200 p-3 rounded hover:bg-blue-600 justify-self-end"
             onClick={() => {
               if (props.source === "inProgress") {
                 dispatch(

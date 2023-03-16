@@ -73,8 +73,8 @@ export function UserPage() {
         </nav>
       </div>
       {/* content */}
-        <div className="p-10 flex-1 flex justify-center items-center bg-slate-50">
-            <div className="flex flex-col items-center h-[80%] w-[80%] bg-white shadow-xl rounded-3xl">
+        <div className="p-0 flex-1 flex justify-center items-center bg-slate-50 md:p-10">
+            <div className="flex flex-col items-center h-full w-full bg-white shadow-xl rounded-3xl ">
                 {state.fresh ? <Fresh /> : null}
                 {state.dashboard ? <Dashboard /> : null}
                 {state.completed ? <Completed /> : null}
