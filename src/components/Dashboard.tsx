@@ -102,7 +102,7 @@ export function Dashboard() {
       <div className="flex w-full h-full flex-col p-2 md:flex-row space-x-3">
         <DragDropContext onDragEnd={onDragEnd}>
           <div className="flex flex-col shadow-inner bg-gray-50 h-full rounded-xl border-solid items-center w-full md:w-1/3">
-            <div className="bg-blue-400 text-stone-50 flex justify-center text-2xl w-10/12 rounded m-3 p-2 shadow-md">
+            <div className="bg-blue-400 text-stone-50 flex justify-center text-2xl w-10/12 rounded m-3 p-2 shadow-xl">
               <h4>fresh</h4>
             </div>
             <Droppable droppableId="freshDrop">
@@ -129,7 +129,7 @@ export function Dashboard() {
             </button>
           </div>
           <div className="flex flex-col h-full shadow-inner bg-gray-50 rounded-xl border-solid items-center w-full md:w-1/3">
-            <div className="bg-orange-500 text-stone-50 flex justify-center text-2xl w-10/12 rounded m-3 p-2 shadow-md">
+            <div className="bg-orange-500 text-stone-50 flex justify-center text-2xl w-10/12 rounded m-3 p-2 shadow-xl">
               <h4>folding</h4>
             </div>
             <Droppable droppableId="inProgressDrop">
@@ -148,7 +148,7 @@ export function Dashboard() {
             </Droppable>
           </div>
           <div className="flex flex-col h-full shadow-inner bg-gray-50 rounded-xl border-solid items-center w-full md:w-1/3">
-            <div className="bg-blue-800 text-stone-50 flex justify-center text-2xl w-10/12 rounded m-3 p-2 shadow-md">
+            <div className="bg-blue-800 text-stone-50 flex justify-center text-2xl w-10/12 rounded m-3 p-2 shadow-xl">
               <h4>put away</h4>
             </div>
             <Droppable droppableId="completedDrop">
@@ -171,14 +171,14 @@ export function Dashboard() {
 
       <Modal isVisible={showModal} onClose={() => setShowModal(false)}>
         <div className="flex flex-col space-y-2">
-          <h1>New Task</h1>
+          <h1 className="text-xl">New Task</h1>
           <label>Title:</label>
           <input
             type="text"
-            className="rounded border"
+            className="rounded border p-3"
             onChange={(e) => dispatch(updateNewTaskTitle(e.target.value))}
           />
-          <button
+          <button className="bg-blue-800 text-stone-200 p-3 rounded hover:bg-blue-600 justify-self-end"
             onClick={() => {
               dispatch(
                 addTask({

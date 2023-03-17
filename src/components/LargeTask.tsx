@@ -29,7 +29,7 @@ export function LargeTask(props: props) {
   const [showSubTaskModal, setShowSubTaskModal] = useState(false);
 
   return (
-    <div className="rounded-lg border w-full p-4">
+    <div className="rounded-lg border w-full p-4 shadow-md">
       <div className="flex  w-full justify-between items-center">
         <h1 className="text-4xl mb-2">{props.title}</h1>
         <div className="flex space-x-3">
