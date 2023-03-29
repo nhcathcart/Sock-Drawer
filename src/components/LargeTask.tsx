@@ -14,6 +14,7 @@ import {
 import { useState } from "react";
 import { Modal } from "./Modal";
 import { SubTasks } from "./SubTasks";
+import { useDispatch } from "react-redux";
 interface props {
   title: string;
   notes: Array<string>;
@@ -49,9 +50,13 @@ export function LargeTask(props: props) {
       </div>
       <div className="flex flex-col w-full">
         <h1 className="text-lg">Subtasks: </h1>
-        <SubTasks subTasks={props.subTasks} index={props.index} source={props.source}/>
+        <SubTasks
+          subTasks={props.subTasks}
+          index={props.index}
+          source={props.source}
+        />
         <h1 className="text-lg">Notes:</h1>
-        <Notes notes={props.notes}/>
+        <Notes notes={props.notes} />
       </div>
       <div className="flex w-full justify-self-end"></div>
       <Modal isVisible={showNoteModal} onClose={() => setShowNoteModal(false)}>
