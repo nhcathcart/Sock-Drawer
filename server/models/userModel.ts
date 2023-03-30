@@ -1,24 +1,19 @@
-import mongoose from 'mongoose';
 import dotenv from 'dotenv'
 dotenv.config()
 
-const MONGO_URI: any = process.env.MONGO_URI;
+import { Pool } from 'pg';
 
-mongoose.connect(MONGO_URI, {
-  dbName: 'users'
-})
-  .then(() => console.log('Connected to Mongo DB.'))
-  .catch(err => console.log(err));
-
-const Schema = mongoose.Schema;
-
-const userSchema = new Schema({
-  username: String,
-  passwordHash: String,
-  
+const PG_URI = process.env.POSTGRES_URI;
+const PG_PASSWORD = process.env.POSTGRES_PASSWORD
+// create a new pool here using the connection string above
+const pool = new Pool({
+  connectionString: PG_URI,
+  password: PG_PASSWORD
 });
 
-const User = mongoose.model('user', userSchema);
-module.exports = {
-  User
+export const db = {
+  query: (text, params, callback) => {
+    console.log('executed query', text);
+    return pool.query(text, params, callback);
+  }
 };

@@ -5,12 +5,14 @@ import type { RootState, AppDispatch } from '../store'
 interface loginInfo {
   username: string | undefined;
   password: string | undefined;
+  confirmPass: string | undefined;
   isLoggedIn: boolean
 }
 
 const initialState: loginInfo = {
   username: undefined,
   password: undefined,
+  confirmPass: undefined,
   isLoggedIn: false,
 }
 
@@ -23,6 +25,9 @@ export const loginSlice = createSlice({
     },
     updatePassword: (state, action) => {
       state.password = action.payload
+    },
+    updateCofirmPass: (state, action) => {
+      state.confirmPass = action.payload
     },
     validateCreds: (state) => {
       if (state.username === 'test' && state.password === 'test') state.isLoggedIn = true;
@@ -38,6 +43,6 @@ export function validate () {
   }
 }
 
-export const { updateUsername, updatePassword, validateCreds } = loginSlice.actions
+export const { updateUsername, updatePassword, updateCofirmPass, validateCreds } = loginSlice.actions
 
 export default loginSlice.reducer

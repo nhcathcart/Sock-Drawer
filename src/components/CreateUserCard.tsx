@@ -1,11 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { updateUsername, updatePassword, validate } from '../reducers/loginReducer';
+import { updateUsername, updatePassword, updateCofirmPass, validate } from '../reducers/loginReducer';
 import { useNavigate } from 'react-router';
-import { Link } from "react-router-dom";
 import { RootState, AppDispatch } from '../store';
 import { useAppDispatch } from '../hooks';
 
-export function LoginCard (){
+export function CreateUserCard (){
 
     const dispatch = useDispatch()
     const AppDispatch = useAppDispatch();
@@ -26,6 +25,11 @@ export function LoginCard (){
                         className='border-2 p-2 rounded-md w-[40%]'
                         onChange={(e)=> dispatch(updatePassword(e.target.value))}
                         />
+                <label>confirm password :</label>
+                <input type={'password'}
+                        className='border-2 p-2 rounded-md w-[40%]'
+                        onChange={(e)=> dispatch(updateCofirmPass(e.target.value))}
+                        />
                 <button 
                     className='bg-blue-800 text-stone-50 w-[20%] justify-self-end p-4 mt-5 rounded'
                     onClick={ async () => {
@@ -33,8 +37,6 @@ export function LoginCard (){
                         if (isLoggedIn) navigate('user-page')                
                     }}
                     >Submit</button>
-
-                <Link to={'create-user'}>Create account</Link>
             </div>
         </div>
     )

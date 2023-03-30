@@ -70,6 +70,12 @@ export function UserPage() {
           >
             put away
           </button>
+          <button
+            className="block py-2 px-4 transition duration-100 hover:bg-blue-500 hover:text-white rounded mt-20"
+            onClick={() => dispatch(chooseCompleted())}
+          >
+            logout
+          </button>
         </nav>
       </div>
       {/* content */}

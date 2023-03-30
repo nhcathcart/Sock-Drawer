@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Root } from "./routes/root";
 import { ErrorPage } from "./error-page";
 import { UserPage } from "./routes/user-page";
+import { CreateUser } from './routes/create-user'
 import { Provider } from "react-redux";
 import { store } from "./store";
 import "./index.css";
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
     path: "/user-page",
     element: <UserPage />,
   },
+  {
+    path: "/create-user",
+    element: <CreateUser/>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(

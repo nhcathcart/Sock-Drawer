@@ -1,4 +1,4 @@
-import { Component, FunctionComponent, JSXElementConstructor, ReactElement, ReactNode } from "react";
+import { ReactNode } from "react";
 import { useAppDispatch } from "../hooks";
 import { clearNewStates } from '../reducers/taskInfo'
 
