@@ -1,16 +1,12 @@
-import { NextFunction } from "express";
+import { NextFunction, RequestHandler, Request, Response } from "express";
+import bcrypt from "bcrypt";
 import { db } from "../models/userModel";
 
-interface loginController {
-  createUser: Function;
-  validateUser: Function;
+const saltRounds = 8;
+
+export const addUser: RequestHandler = (req, res, next) => {
+  res.locals.hello = 'hello'
+  next();
 }
 
-const loginController: loginController = {
-  createUser: function (req: Request, res: Response, next: NextFunction) {
 
-  },
-  validateUser: function (req: Request, res: Response, next: NextFunction) {
-    
-  },
-};
