@@ -19,6 +19,7 @@ import {
   Droppable,
   DropResult,
 } from "react-beautiful-dnd";
+import React from "react";
 
 export function Dashboard() {
   const state = useAppSelector((state) => state.tasksInfo);

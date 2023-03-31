@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { LoginCard } from "../components/Login";
 import { updatePassword, updateUsername } from "../reducers/loginReducer";

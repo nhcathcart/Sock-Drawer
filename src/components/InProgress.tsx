@@ -1,12 +1,13 @@
 import { useAppSelector, useAppDispatch } from "../hooks";
 import { LargeTask } from "./LargeTask";
-import { Fragment } from "react";
+import { Fragment, ReactElement } from "react";
+import React from "react";
 
 export function InProgress() {
   const state = useAppSelector((state) => state.tasksInfo.inProgressTasks);
   const dispatch = useAppDispatch();
   const source: string = "inProgress";
-  const tasks = [];
+  const tasks: ReactElement[] = [];
   for (let i = 0; i < state.length; i++) {
     tasks.push(
       <LargeTask

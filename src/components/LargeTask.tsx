@@ -15,6 +15,7 @@ import { useState } from "react";
 import { Modal } from "./Modal";
 import { SubTasks } from "./SubTasks";
 import { useDispatch } from "react-redux";
+import React from "react";
 interface props {
   title: string;
   notes: Array<string>;

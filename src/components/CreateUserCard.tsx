@@ -3,6 +3,7 @@ import { updateUsername, updatePassword, updateCofirmPass, validate } from '../r
 import { useNavigate } from 'react-router';
 import { RootState, AppDispatch } from '../store';
 import { useAppDispatch } from '../hooks';
+import React from 'react';
 
 export function CreateUserCard (){
 
