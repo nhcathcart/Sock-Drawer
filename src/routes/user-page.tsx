@@ -9,6 +9,7 @@ import { Dashboard } from "../components/Dashboard";
 import { Fresh } from "../components/Fresh";
 import { Completed } from "../components/Completed";
 import { InProgress } from "../components/InProgress";
+import React from "react";
 
 export function UserPage() {
   const state = useAppSelector((state) => state.viewChoice);
@@ -79,14 +80,14 @@ export function UserPage() {
         </nav>
       </div>
       {/* content */}
-        <div className="p-0 flex-1 flex justify-center items-center bg-slate-50 md:p-10">
-            <div className="flex flex-col items-center h-full w-full bg-white shadow-xl rounded-3xl ">
-                {state.fresh ? <Fresh /> : null}
-                {state.dashboard ? <Dashboard /> : null}
-                {state.completed ? <Completed /> : null}
-                {state.inProgress ? <InProgress /> : null}
-            </div>
+      <div className="p-0 flex-1 flex justify-center items-center bg-slate-50 md:p-10">
+        <div className="flex flex-col items-center h-full w-full bg-white shadow-xl rounded-3xl ">
+          {state.fresh ? <Fresh /> : null}
+          {state.dashboard ? <Dashboard /> : null}
+          {state.completed ? <Completed /> : null}
+          {state.inProgress ? <InProgress /> : null}
         </div>
+      </div>
     </div>
   );
 }
