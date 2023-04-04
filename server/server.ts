@@ -1,5 +1,6 @@
 import express from "express";
-import {addUser, setCookie, loginUser} from "./controllers/loginController.js";
+import { addUser, setCookie, loginUser, checkAuth } from "./controllers/loginController.js";
+import { addTask, addSubTask, toggleSubTask } from "./controllers/taskController.js";
 import {Request, Response, NextFunction} from "express"
 import cookieParser from "cookie-parser"
 
@@ -21,6 +22,18 @@ app.post("/add-user", addUser, setCookie, (req, res) => {
 
 app.post("/login-user", loginUser, setCookie, (req, res) => {
   res.send('succesful login')
+})
+
+app.post("/add-task", checkAuth, addTask, (req, res) => {
+  res.send('succesfully added task')
+})
+
+app.post("/add-sub-task", checkAuth, addSubTask, (req, res) => {
+  res.send('successfully added subTask')
+})
+
+app.post("/toggle-sub-task", checkAuth, toggleSubTask, (req, res) => {
+  res.send('successfully toggled subTask')
 })
 
 //global error handler
